@@ -1,2 +1,3 @@
 # MSC-group-project
-GP
+
+# web workshop
