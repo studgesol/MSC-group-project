@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  padding: 10px;
+  background: #f1f1f1;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  text-align: center;
+  background: white;
+}
+
+.header h1 {
+  font-size: 50px;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  background-color: #f1f1f1;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h2>Software development group project</h2>
+  <p>Welcome to Software development (Team Solomon).</p>
+</div>
+
+<div class="topnav">
+  <a href="#">Home</a>
+  <a href="#">About us</a>
+  <a href="#">Help</a>
+  <a href="#" style="float:right">Contact us</a>
+</div>
+
+<div class="row">
+  <div class="centre">
+    <div class="card" style="background-color:LightCyan;">
+      <h2>Search engines</h2>
+      <h5>Title description, Jan 10, 2020</h5>
+      <p>We will include a different search dialogue box for kinase (Uniprot ID, Gene name or HGNC) and inhibitor (Inhibitor name or kinase target) respectively and also include a file upload option for a Phosphoproteomic data file (.tsv file). </p>
+    </div>
+    </div>
+</div>
+<br>
+<form action="/action_page.php">
+  Kinase:
+  <input type="text" value="e.g:PIK3CA">
+  <br>
+  <input type="submit" value="Submit">
+  <input type="submit" value="Reset">
+</form>
+<br>
+<form action="/action_page.php">
+  Inhibitor:
+  <input type="text" value="e.g:Panulisib">
+  <br>
+  <input type="submit" value="Submit">
+  <input type="submit" value="Reset">
+</form>
+<br>
+<form action="/action_page.php">
+  File Upload:
+  <input type="text" value=".tsv file ">
+  <br>
+  <input type="submit" value="Submit">
+  <input type="submit" value="Reset">
+</form>
+
+
+<div class="footer">
+  <h5>Property of QMUL</h5>
+</div>
+
+</body>
+</html>
+
