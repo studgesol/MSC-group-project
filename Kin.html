@@ -1,0 +1,59 @@
+<doctype html>
+<head>
+    <title>Software development group project</title>
+</head>
+
+<h2>Software development group project</h2>
+
+<body>
+<div class="navbar">
+            <a href="{{ url_for('Home') }}" class="navbar-brand">Home</a>
+	    <span style="margin-left: 500px;">
+            <a href="{{ url_for('About us') }}" class="navbar-item">About us</a>
+	    <span style="margin-left: 500px;">
+            <a href="{{ url_for('Help') }}" class="navbar-item">Help</a>
+	    <span style="margin-left: 500px;">
+            <a href="{{ url_for('Contact') }}" class="navbar-item">Contact</a>
+        </div>
+
+  <table width="100%" cellspacing="2" cellpadding="1" border="3"></table>
+  <table width="100%" cellspacing="2" cellpadding="1" align="centre">
+   <tbody>
+     <tr>
+       <td colspan="4" style="tex-decoration-style: justify;"></td>
+	 <br>
+	 <h2>Welcome to Software development</h2>
+	The aim is to convert user input data into output.
+	<br>
+	<ul></ul>
+	In respect to each kinase, Uniprot entry names are provided as well as their respecitive family names, neighbouring sequence, protein function, residue position and residue involved in phosphorylation.
+	<br>
+	<br>
+	<br>
+	<br>
+       </tr>
+       <tr>
+	 <td valign="top" align="centre">
+	   <em>Name of gene:</em>
+	   <br>
+          </td>
+          <td>
+            <form action="database" method="get"
+              <input size="22" name="gene_name" type="text">
+              <input value="Search" type="submit">
+              <input value="Clear" type="reset">
+	<br>
+	<br>
+	<br>
+       </tr>
+          <td valign="top" align="centre">
+           <em>Entry name:</em>
+           <br>
+          </td>
+          <td>
+            <form action="database" method="get"
+              <input size="22" name="entry_name" type="text">
+              <input value="Search" type="submit">
+              <input value="Clear" type="reset">
+
+
