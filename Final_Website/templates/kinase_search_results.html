@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<title>Search Results - Kinase Database</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script src="http://ebi-uniprot.github.io/CDN/protvista/protvista.js"></script> 
+  <link href="http://ebi-uniprot.github.io/CDN/protvista/css/main.css" rel="stylesheet"/>
+  <style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+/* Style the header */
+.header {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 15px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 10px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 10px;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width:600px) {
+  .column {
+    width: 100%;
+  }
+}
+<!-- Define table CSS -->
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+}
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+</style>
+<head>
+    <title> Kinase Database</title>
+
+</head>
+<body>
+<br>
+<center>
+<button type="button" class="btn btn-outline-primary"><a href="/">Home</a></button>
+<button type="button" class="btn btn-outline-primary"><a href="/contact_us">Contact Us</a></button>
+<button type="button" class="btn btn-outline-primary"><a href="/about_us">About Us</a></button>
+<button type="button" class="btn btn-outline-primary"><a href="/help">Help</a></button>
+</center>
+<br>
+<body>
+ <div class="w3-bar w3-black">
+    <button class="w3-bar-item w3-button tablink w3-red" onclick="openCity(event,'Kinase_Information')">Kinase_Information</button>
+    <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Inhibitors')">Inhibitors</button>
+    <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Substrates')">Substrates</button>
+  </div>
+  <div id="Kinase_Information" class="w3-container w3-border city">
+<!-- Kinase_Information -->
+{% if results %}
+<br><br>
+	<center><h2>All Known Kinases</h2>
+	<p><b>*</b> Click On Kinase Gene Name to view the profile.</p></center>
+          <center><table>
+
+          <tr>
+            <td><b>Kinase_Name:</td>
+            <td><b>UniProt_ID</td>
+            <td><b>Alias</td>
+          </tr>
+          <tr>
+{% for x in results %}
+
+             <td><a href="{{ url_for('kinaseprofile', kinase = x.Kinase_Gene_Name) }}">{{ x.Kinase_Gene_Name }}</a></td>
+             <td><a>{{ x.UniProt_ID }}</a></td>
+             <td><a>{{ x.Alias }}</a></td>
+          </tr>
+          {% endfor %}
+          </table></center>
+      {% else %}
+      <!-- if there are no results render the following: -->
+        <big><center> No known kinases found </center></big>
+      {% endif %}
+<br><br>
+</div>
+
+  <div id="Inhibitors" class="w3-container w3-border city" style="display:none">
+<!-- Inhibitors -->
+
+        {% if inhibresults %}
+<br><br>
+	<center><h2>All Known Inhibitors</h2>
+	<p><b>*</b> Click on Name to view the profile.</p>
+          <center><table>
+
+          <tr>
+            <td><b>Inhibitor ID</td>
+            <td><b>Name</td>
+            <td><b>ChEMBL_ID</td>
+            <td><b>Targets</td>
+          </tr>
+          <tr>
+             {% for x in inhibresults %}
+             <td><a href="{{ url_for('inhib_INN_Name_profile', INN_Name = x.Inhibitors.INHIBITOR_ID) }}">{{ x.Inhibitors.INHIBITOR_ID }}</a></td>
+             <td><a>{{ x.Inhibitors.INN_Name }}</a></td>
+             <td><a>{{ x.Inhibitors.ChEMBL_ID }}</a></td>
+             <td><a>{{ x.Inhibitors.Targets }}</a></td>
+          </tr>
+          {% endfor %}
+          </table></center>
+      {% else %}
+      <!-- if there are no results render the following: -->
+        <big><center> No known kinase inhibitors found </center></big>
+      {% endif %}
+<br><br>
+</div>
+
+  <div id="Substrates" class="w3-container w3-border city" style="display:none">
+<!-- Substrates -->
+
+        {% if phosphresults %}
+<br><br>
+	<center><h2>All Known Phosphosites</h2>
+	<p><b>*</b> Click On PHOSPHO_ID to view the profile.</p></center>
+          <center><table>
+
+          <tr>
+            <td><b>PHOSPHO_ID</td>
+            <td><b>Kinase Gene Name</td>
+            <td><b>Substrate Gene Name</td>
+            <td><b>Substrate Modified Residue</td>
+            <td><b>Chromosome Location</td>
+          </tr>
+          <tr>
+             {% for x in phosphresults %}
+             <td><a href="{{ url_for('substrateprofile', Substrate = x.Phosphosite.PHOSPHO_ID) }}">{{ x.Phosphosite.PHOSPHO_ID }}</a></td>
+             <td><a>{{ x.Phosphosite.KINASE_GENE_NAME }}</a></td>
+             <td><a>{{ x.Phosphosite.SUB_GENE_NAME }}</a></td>
+             <td><a>{{ x.Phosphosite.SUB_MOD_RSD }}</a></td>
+             <td><a>{{ x.Phosphosite.CHR_LOC }}</a></td>
+          </tr>
+          {% endfor %}
+          </table></center>
+      {% else %}
+      <!-- if there are no results render the following: -->
+        <big><center> No known Phosphosites found </center></big>
+      {% endif %}
+<br><br>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " w3-red";
+}
+</script>
+<script type="text/javascript" >
+$( document ).ready(function() {
+  var seen = {};
+$('table tr').each(function() {
+  var txt = $(this).find("td:not(:first)").text();
+  
+  if (seen[txt])
+    $(this).remove();
+  else
+    seen[txt] = true;
+});
+});
+</script>
+</html>

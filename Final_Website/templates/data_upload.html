@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Phosphoproteomic data upload</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" type="text/css" href="static/css/main.css">
+<main>
+<body>
+<br>
+<center>
+<button type="button" class="btn btn-outline-primary"><a href="/">Home</a></button>
+<button type="button" class="btn btn-outline-primary"><a href="/contact_us">Contact Us</a></button>
+<button type="button" class="btn btn-outline-primary"><a href="/about_us">About Us</a></button>
+<button type="button" class="btn btn-outline-primary"><a href="/help">Help</a></button>
+</center>
+<br>
+<br><br>
+  <div class="w3-card w3-border-bottom w3-border-light-grey w3-padding-12 w3-light-grey">      
+          <br>
+          <center>
+            <p> Upload and analyse your Phosphoproteomic Data NOW! </p>
+            <br>
+            <br>
+
+            <form style="text-align:center;" class=searchButton id="upload-form" action="{{ url_for('data_file_results')}}" method="POST" enctype="multipart/form-data" >
+            <input style="text-align:center;" type="file" name="file" accept=".tsv">
+            <input class=searchButton type=submit value=Upload onClick="$('#loading').show();">
+                         File format accepted: <b>'.tsv'</b>
+
+<form id="form1" runat="server">
+<div>
+<asp:Label ID="Label1" runat="server" Font-Bold="True" Text="Name:"></asp:Label>
+</div>
+</form>
+<br><br>
+<div class= loading id="loading" style="display:none;"><button class="btn btn-primary"><span class="spinner-grow spinner-grow-sm"></span></button><br>LOADING!<br>PLEASE WAIT! THIS MAY TAKE FEW MINUTES....</div>            
+</form><br>
+</div>
+</center>
+</body>
+</html>

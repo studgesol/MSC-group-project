@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<title>Inhibitor Search Tool</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+<br>
+<center>
+<button type="button" class="btn btn-outline-primary"><a href="/">Home</a></button>
+<button type="button" class="btn btn-outline-primary"><a href="/contact_us">Contact Us</a></button>
+<button type="button" class="btn btn-outline-primary"><a href="/about_us">About Us</a></button>
+<button type="button" class="btn btn-outline-primary"><a href="/help">Help</a></button>
+</center>
+<br>
+<div class="w3-card-4 w3-border-bottom w3-border-light-grey w3-padding-12 w3-light">
+<br><br>
+<center>
+  <header class="w3-center w3-margin-bottom">
+    <p>Search for a Kinase Inhibitor based on the Inhibitor name or ChEMBL ID. <p><b>No search results? Search by Kinase Targets!</b></p></header>
+  {% with messages = get_flashed_messages() %}
+  <!-- if there is an error message then output this message -->
+    {% if messages %}
+      <l class=flashes>
+      {% for message in messages %}
+        {{ message }}
+      {% endfor %}
+      </l>
+
+  {% endif %}
+{% endwith %}
+
+<!-- Search Function -->
+{% from "helperforms.html" import render_field %}
+<form method=post>
+  <div class="search">
+    <div class="wrap">
+
+      <!-- drop down menu -->
+      {{ form.select(class_="searchTerm")}}<!-- 'class_' is based on a style located in the main CSS sheet -->
+      <br>
+      <br>
+      <!-- search bar -->
+      {{ form.search(class_="searchTerm", placeholder="What are you looking for?") }}
+      <p>
+      <br>
+      <br>
+    <input class="btn btn-primary" type=submit value=Search class=searchButton>
+  </div>
+ </div>
+</form>
+  </center>
+<br>
+<br></div>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  padding: 10px;
+  background: #f1f1f1;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  text-align: center;
+  background: white;
+}
+
+.header h1 {
+  font-size: 50px;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
+<body>
+<br>
+<center>
+<button type="button" class="btn btn-outline-secondary"><a href="/">Home</a></button>
+<button type="button" class="btn btn-outline-secondary"><a href="/contact_us">Contact Us</a></button>
+<button type="button" class="btn btn-outline-secondary"><a href="/about_us">About Us</a></button>
+</center>
+<br>
+<title>HELP</title>
+<div>
+<h2>HELP PAGE</h2>
+<div class = "card">
+<h3> Q1. Where is the data collected from?</h3>
+<p> For more information on kinases visit: <cite><a href="http://www.kinhub.org/kinases.html">KinHub</a></cite>, <cite><a href="http://kinase.com/web/current/kinbase/genes/SpeciesID/9606/">KinBase</a></cite>, <cite><a href="https://www.uniprot.org/help/api_queries">UniProt API</a></cite></p>
+<p> For more information on Inhibitors visit: <cite><a href="http://www.icoa.fr/pkidb/">PKIDB</a></cite></p>
+<p> For more information on Phosphosites visit: <cite><a href="https://www.phosphosite.org/staticDownloads">Phophosite plus</a></cite></p>
+</div>
+<div class = "card">
+<h3> Q2. What are the chemical properties included in inhibitors search results?</h3>
+<p> <b>Molecular Descriptors:</b>
+<br>- RoF = Lipinski's rule of five (number of violation).
+<br>- LogP = Log of Partition Coefficient.
+<br>- TPSA = Topological Polar Surface Area.
+<br>- HBA = number of Hydrogen Bond Acceptor.
+<br>- HBD = number of Hydrogen Bond Donor.
+<br>- NRB = Number of Rotatable Bonds.
+<br> <b>The average values considered for the descriptors were as follows:</b>
+<br>- Have a molecular weight (MW) between 309 and 617 Da (average of 463.3)
+<br>- Have a ClogP (calculated with RDKit) between 1.4 and 6.7 (average of 4.0)
+<br>- Contain between 0 and 4 hydrogen bond donors (HBD) (average of 2.1)
+<br>- Contain between 3 and 11 hydrogen bond acceptors (HBA) (average of 6.7)
+<br>- Have a topological polar surface area (TPSA) between 54 and 140 Å2 (average of 96.8)
+<br>- Contain between 1 and 11 rotatable bonds (NRB) (average of 6.2)</p>
+</div>
+<div class = "card">
+<h3> Q3. How neighbouring sequences affect the phoshorylation sites? </h3>
+<p> The neighbouring sequences affect the 3D structure of the protein which in turn affects the phosphorylation sites.</p>
+</div>
+<div class = "card">
+<h3> Q4. What do the terms SMILES and InCHI key refer to?</h3>
+<p>1. <b>SMILES</b> (Simplified Molecular Input Line Entry System) is a chemical notation that allows a user to represent a chemical structure in a way that can be used by the computer.
+<br>
+2. The <b>IUPAC InCHI</b> (International Chemical Identifier) is a textual identifier for chemical substances which are designed to provide a standard way to encode molecular information and to facilitate the search for such information in databases and on the web.
+<br>3. <cite><a href="https://inchi.info/inchikey_overview_en.html"><b>InChIKey</b></a><cite> is a fixed-length format directly derived from InChI. It is based on a strong hash (SHA-256 algorithm) of an InChI string.</p>
+</div>
+<div class = "card">
+<h3> Q5. What are the chromosome X,chromosome Y & chromosome MT refer to?</h3>
+<p> The <b>X & Y chromosome</b> are the two sex chromosomes.Females have two X chromosomes, while males have one X and one Y chromosome.
+<br> <b>MT chromosome</b> is a small circular chromosome composed of mitochondrial DNA usually found inside mitochondria.</p>
+</div>
+<div class = "card">
+<h3> Q6. How to access the NCBI Sqeuence Viewer in the phosphosite search?</h3>
+<p>1. Select the chromosome you are interested in.
+<br>2. Copy the Substrate gene name in the find dialogue box.
+<br>3. Double right click on the feature results and click close to view the sequence.
+<br>4. Hover on the sequence to find all the general information for the substrate and click on the sequence to find all the isoforms present.</p>
+</div>
+<div class = "card">
+<h3> Q7. How is Relative Kinase Activity calculated?</h3>
+<p> The relative kinase activity barplot shows the activity of each identified kinase in both control and inhibited samples.
+<br> 1. Relative Kinase Activity = (Sum of control mean's of a kinase)/(Total control mean of the sample)
+<br> 2. Relative Inhibited Activity = (Sum of inhibitor mean's of a kinase)/(Total inhibitor mean of the sample)</p>
+</div>
+<div class = "card">
+<h3> Q8. What does the Kinase/Phosphosite feature viewer show?</h3>
+<p> The feature viewers are embedded into the website using the ProtVista - A BioJS viewer for protein sequence features. 
+It shows other many important features revolving around a kinase or a substrate. More information can be found on this 
+<b><cite><a href="https://www.youtube.com/watch?v=hS_8PDPdcCg&feature=emb_logo">video</a>.</cite></b></p>
+</div>
+</div>
+</body>
+</html>
