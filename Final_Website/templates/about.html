@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  padding: 10px;
+  background: #f1f1f1;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  text-align: center;
+  background: white;
+}
+
+.header h1 {
+  font-size: 50px;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  background-color: #f1f1f1;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
+}
+</style>
+</head>
+
+<body>
+<br>
+<center>
+<button type="button" class="btn btn-outline-secondary"><a href="/">Home</a></button>
+<button type="button" class="btn btn-outline-secondary"><a href="/contact_us">Contact Us</a></button>
+<button type="button" class="btn btn-outline-secondary"><a href="/help">Help</a></button>
+</center>
+<br>
+<title>ABOUT US</title>
+<div class = "card">
+<center><h3>About Project</h3></center>
+<font size="4"> The aim of this project is to create a database driven web application that takes into account all the general information of kinases, Inhibitors and Phosphorylation sites. In addition users can also upload phosphoproteomic data to visualize in a graphical representation. The website was developed by a group of five students part of MSc Bioinformatics from Queen Mary's University of London, under the supervision of Dr. Conrad Bessant and Dr. Fabrizio Smeraldi.<br> 
+</font>
+</div>
+<br>
+<div class = "card">
+<div class="w3-row-padding w3-grayscale">
+<div class="w3-col l3 m6 w3-margin-bottom">
+<h2>TEAM MEMBERS:</h2>
+<h3>Abhilash R Sarvadevabhatla</h3>
+<p class="w3-opacity"> Student </p>
+<p> Experience in web development and component integration. Proficient and highly accurate in data collection, sorting, and analysis.</p>
+</div>
+<div class="w3-col l3 m6 w3-margin-bottom">
+<h3>Arun Retnakumar</h3>
+<p class="w3-opacity"> Student </p>
+<p>  Estemeed knowledge in SQLite and flask-script integration. Proficient and highly accurate in data collection, sorting, and analysis.</p>
+</div>
+<div class="w3-col l3 m6 w3-margin-bottom">
+<h3>Samia Asvid</h3>
+<p class="w3-opacity"> Student </p>
+<p> Expert in the field of Phosphoproteomic data analysis and data visualisation.Proficient and highly accurate in data collection, sorting, and analysis. </p>
+</div>
+<div class="w3-col l3 m6 w3-margin-bottom">
+<h3>Solomon P J Pungong</h3>
+<p class="w3-opacity"> Student </p>
+<p> Experience in web development and component integration. Proficient and highly accurate in data collection, sorting, and analysis.</p>
+</div>
+<div class="w3-col l3 m6 w3-margin-bottom">
+<h3>Tong Meng</h3>
+<p class="w3-opacity"> Student </p>
+<p> Estemeed knowledge in SQLite and flask-script integration. Proficient and highly accurate in data collection, sorting, and analysis. </p>
+</div>
+</div>
+</div>
+</body>
+</html>
