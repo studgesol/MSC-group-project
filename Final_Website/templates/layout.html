@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Kincyclopedia</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<style>
+/* Style the header */
+.header {
+  color: white;
+  background-image:url("https://promega.media/-/media/images/resources/kinase/kinome_full.jpg?la=en");
+  background-size: 100% 100%;
+  padding: 50px;
+  text-align: center;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  background-size: 100% 100%;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: center;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  background: url("https://www.eema.org/wp-content/uploads/footer-background.jpg");
+  background-size: 100%;
+  margin-top: 10px;
+}
+</style>
+</head>
+<body>
+<div class="header">
+        <h1>Kincyclopedia</h1>
+        <h3>A web interface by Team Solomon...</h3>
+</div>
+  
+<nav class="navbar navbar-expand-sm bg-dark">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link text-white" href="/"><b>Home</b></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-white" href="/contact_us"><b>Contact Us</b></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-white" href="/about_us"><b>About Us</b></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-white" href="/help"><b>Help</b></a>
+    </li>
+    
+  </ul>
+</nav>
+<br>
+<div class="row">
+  <div class="column">
+<div class ="container-fluid">
+<center>    <h3>Kinase search:</h3>
+    <p>&ensp;*The kinases can only be searched using <b>Kinase Uniprot ID, Kinase Gene Name, Alias Name.</b></p>
+<form action="/Kinase_search_results" method="get">
+<button type="button" class="btn btn-outline-primary"><a href="/kinase">Kinase Search</a></button>
+      </form>
+</div></center>
+<br><br>
+<div class="container-fluid">
+<center>    <h3>Inhibitor search:</h3>
+    <p>&ensp;*The inhibitors can also be searched using <b>Inhibitor ChEMBL ID, Inhibitor Name, Kinase Targets.</b></p>
+    <form action="/inhibitor_search_results" method="get">
+<button type="button" class="btn btn-outline-primary"><a href="/Inhibitor">Inhibitor Search</a></button>
+    </form>
+</div>
+  </div></center>
+  
+  <div class="column">
+<div class="container-fluid">
+<center>    <h3>Phosphosite search:</h3>
+    <p>&ensp;*The phosphosites can be searched using the substrate name which are in <b>Substrate Gene Name, Substrate Uniprot ID, Substrate Name.</b></p>
+<form action="/phosphosite_search_results" method="get">
+<button type="button" class="btn btn-outline-primary"><a href="/Phosphosites">Phosphosite Search</a></button>
+    </form>
+</div></center>
+<br>
+<div class="container-fluid">
+<center>  <h3>Phosphoproteomic data upload:</h3>
+<p>&ensp;The choose file only supports <b>.tsv</b> file format.</p>
+<button type="button" class="btn btn-outline-primary">  <a href="{{ url_for('Tool') }}" class="w3-bar-item w3-button">Data Upload Tool</a></button>
+</div></center>
+</div>
+</div> 
+</div>
+<br><br>
+<div class="footer">
+  <h6>Property of QMUL @ Abhilash, Arun, Samia, Solomon, Tong.</h6>
+<h6>For more details on the development of Kincyclopedia refer to our <a href="https://github.com/A6h9lash/MSC-group-project">Github</a> page.</h6>
+</div>
+</body>
+</html>
